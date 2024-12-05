@@ -20,7 +20,7 @@ def register():
             username=form.username.data,
             first_name=form.first_name.data,
             last_name=form.last_name.data,
-            password=form.password.data  # Ensure password hashing is applied
+            password=form.password.data  #password hashing
         )
 
         # Add employee to the database
@@ -28,10 +28,8 @@ def register():
         db.session.commit()
         flash('You have successfully registered! You may now login.')
 
-        # Redirect to the login page
         return redirect(url_for('auth.login'))
 
-    # Load registration template
     return render_template('auth/register.html', form=form, title='Register')
 
 
